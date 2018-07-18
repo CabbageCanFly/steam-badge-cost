@@ -1,0 +1,72 @@
+/*----
+Main
+----*/
+
+@font-face {
+	font-family: 'Yanone Kaffeesatz';
+	src: url('../resources/fonts/YanoneKaffeesatz-Regular.ttf');
+}
+@font-face {
+	font-family: 'Encode Sans Condensed';
+	src: url('../resources/fonts/EncodeSansCondensed-Regular.ttf');
+}
+.yanone {
+	font-style: 'Yanone Kaffeesatz';
+}
+.encode {
+	font-style: 'Encode Sans Condensed';
+}
+
+html {
+
+}
+
+body {
+	background-color: #272822;
+	font-family: 'Encode Sans Condensed', sans-serif;
+	color: White;
+	margin-bottom: 3em;
+}
+
+#title {
+	text-align: center;
+}
+
+#table_main {
+	background-color: rgba(255,255,255,0.1);
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+#table_main {
+	border: 1px solid white;
+}
+#table_main thead {
+	background-color: #A6E22E !important;
+	color: black;
+}
+#table_content tr:nth-child(odd) {
+	background-color: rgba(255,255,255,0.1);
+}
+#table_content tr:nth-child(even) {
+	background-color: rgba(255,255,255,0.2);
+}
+#table_content {
+	border: none;
+}
+th {
+	font-weight: normal;
+}
+
+#lastModified {
+	position: fixed;
+	background-color: #272822;
+	color: rgba(255,255,255,0.4);
+	width: 100%;
+	text-align: right;
+	padding: 8px 8px 8px 0;
+	margin-left: -8px;
+	font-size: 1rem;
+	bottom: 0;
+	left: 0;
+}
