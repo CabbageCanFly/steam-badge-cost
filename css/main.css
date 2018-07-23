@@ -26,24 +26,22 @@ body {
 	font-family: 'Encode Sans Condensed', sans-serif;
 	color: White;
 	margin-bottom: 3em;
-}
-
-#title {
-	text-align: center;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 #table_main {
 	background-color: rgba(255,255,255,0.1);
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;
+	width: 100%;
 }
 #table_main {
-	border: 1px solid white;
+	border-collapse: collapse;
+	/*border: 1px solid white;*/
 }
 #table_main thead {
-	background-color: #A6E22E !important;
-	color: black;
+	color: #A6E22E;
 }
 #table_content tr:nth-child(odd) {
 	background-color: rgba(255,255,255,0.1);
@@ -55,7 +53,15 @@ body {
 	border: none;
 }
 th {
+	cursor: pointer;
+}
+td, th {
 	font-weight: normal;
+	padding: 6px;
+	word-wrap: break-word;
+}
+td:not(:last-child), th:not(:last-child) {
+	border-right: 1px solid rgba(255,255,255,0.75);
 }
 
 #lastModified {
