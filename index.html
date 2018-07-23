@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Steam</title>
+	<title>Badge</title>
 	<meta charset="UTF-8" name="theme-color" content="#272822">
 	<meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/ico" href="resources/images/favicon.png" />
@@ -15,9 +15,9 @@
 	<table id="table_main">
 		<thead>
 			<tr>
-				<th>Table Header1</th>
-				<th>Table Header2</th>
-				<th>Table Header3</th>
+				<th onclick="sortTable('table_main', 0)">Product</th>
+				<th onclick="sortTable('table_main', 1)">Badge Price</th>
+				<th onclick="sortTable('table_main', 2)">Store Price</th>
 			</tr>
 		</thead>
 		<tbody id="table_content">
