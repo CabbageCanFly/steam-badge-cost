@@ -87,6 +87,11 @@ hr.h1-bg {
 	border-color: rgba(255,255,255,0.25);
 }
 
+b {
+	font-weight: normal;
+	color: #FD971F
+}
+
 p {
 	color: rgba(255,255,255,0.6);
 }
