@@ -84,7 +84,7 @@ steamCardReq.onreadystatechange = function() {
 		};
 
 		var j = 0;
-		var interval = 75;
+		var interval = 115;
 		while (j < arr.length / 100) {
 			setTimeout(function() {
 				insertHTMLLoop(100);
@@ -94,64 +94,16 @@ steamCardReq.onreadystatechange = function() {
 
 		var id;
 		var hr = document.getElementById("progress");
+		var val = document.getElementById("progressVal");
 		var hrProgress = function() {
 			hr.style.width = (i / arr.length * 100) + '%';
+			val.innerHTML = Math.round(i / arr.length * 100) + '%';
 			if (i >= arr.length) {
+				val.classList.add("fadeAway");
 				clearInterval(id);
 			}
 		};
 		var id = setInterval(hrProgress, 10);
-		
-		// arr.forEach(function (el, index) {
-			
-		// 	if (index < 100) {
-		// 		setTimeout(function () {
-		// 			insertHTML();
-		// 			console.log(index);
-		// 		}, index * interval);
-		// 	} else {
-		// 		setTimeout(function () {
-		// 			insertHTML();
-		// 			console.log(index, "!");
-		// 		}, 1 * interval);
-		// 	}
-		// });
-
-		/*
-		for(i = 0; i < arr.length; i += 1) {
-			var tBody = document.getElementById("table_content");
-			var row = tBody.insertRow();
-		
-			// Product name
-			var cell = row.insertCell();
-			cell.innerHTML = arr[i][0][1];
-
-			// Badge price
-			cell = row.insertCell();
-			cell.innerHTML = arr[i][2];
-
-			// Product price
-			cell = row.insertCell();
-			if (storePrices[arr[i][0][0]] != undefined) {
-				if (storePrices[arr[i][0][0]]['initial'] != -1) {
-					cell.innerHTML = "$" + storePrices[arr[i][0][0]]['initial'] / 100;
-					// Cost ratio
-					cell = row.insertCell();
-					cell.innerHTML = (parseFloat(arr[i][2].substring(1)) / (storePrices[arr[i][0][0]]['initial'] / 100)).toFixed(2);
-				} else {
-					cell.innerHTML = "N/A";
-					// Cost ratio
-					cell = row.insertCell();
-					cell.innerHTML = "N/A";
-				}
-			}
-			else {
-				cell.innerHTML = "N/A";
-				cell = row.insertCell();
-				cell.innerHTML = "N/A";
-			}
-		}
-		*/
 	}
 };
 

@@ -30,9 +30,40 @@ body {
 	margin-right: 10%;
 }
 
+header {
+	position: relative;
+}
+
 h1#title {
 	display: inline-block;
-	margin-bottom: 0.5em;
+	margin-bottom: 0;
+}
+
+#github_link {
+	display: inline-block;
+	font-size: 85%;
+	margin-right: 4em;
+}
+
+#progressVal {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+#progressVal.fadeAway {
+	animation: fadeAway 1s forwards;
+}
+@keyframes fadeAway {
+	0% {
+		opacity: 1;
+	}
+	99% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		display: none;
+	}
 }
 
 div.progress {
@@ -64,6 +95,7 @@ div.progress + p {
 }
 
 a.text {
+	display: inline-block;
 	text-decoration: none;
 	position: relative;
     background: none;
@@ -115,14 +147,10 @@ a.text:active:before {
 	border: 1px solid #272822;
 }
 
-#github_link {
-	font-size: 85%;
-}
-
 #table_main {
+	word-break: break-word;
 	background-color: rgba(255,255,255,0.1);
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0;
 	width: 100%;
 }
 #table_main {
@@ -130,6 +158,9 @@ a.text:active:before {
 }
 #table_main thead {
 	color: #FD971F;
+}
+#table_main thead tr th:first-child {
+	width: 50%;
 }
 #table_content tr:nth-child(odd) {
 	background-color: rgba(255,255,255,0.1);
@@ -139,9 +170,6 @@ a.text:active:before {
 }
 #table_content {
 	border: none;
-}
-#table_content tr td:first-child {
-	width: 50%;
 }
 
 th {
@@ -196,17 +224,18 @@ footer a.text {
 	color: rgba(255,255,255,0.4);
 }
 #footer_container {
-	padding: 12px 8px 12px 8px;
-}
-#credits {
-	display: inline-block;
-	float: left;
-	width: 75%;
+	padding: 8px 8px 8px 8px;
 }
 #lastModified {
 	display: inline-block;
 	background-color: #272822;
-	width: 25%;
+	width: 100%;
 	text-align: right;
 	font-size: 1rem;
+}
+
+@media screen and (max-width: 420px) {
+	th {
+		font-size: 85%;
+	}
 }
