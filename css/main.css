@@ -79,7 +79,7 @@ hr.h1 {
 	border-color: rgba(255,255,255,0.6);
 	width: 0%;
 	margin-left: 0;
-	transition: width 1s;
+	transition: width 0.45s;
 }
 hr.h1-bg {
 	width: 100%;

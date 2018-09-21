@@ -13,11 +13,20 @@ document.getElementById("lastModified").innerHTML = date;
 var storePrices;
 var file = "../resources/data.json";
 
-var jsonFile = new XMLHttpRequest();
+// Read in JSON data
+jsonFile = new XMLHttpRequest();
 jsonFile.open("GET", file);
 jsonFile.onreadystatechange = function() {
 	if(this.readyState === 4) {
 		if(this.status === 200 || this.status == 0) {
+			// Last modified date of JSON file
+			var lastMod = new Date(jsonFile.getResponseHeader("Last-Modified"));
+			date = lastMod.getFullYear() + '-' +
+				("0" + (lastMod.getMonth() + 1)).slice(-2) + '-' + 
+				("0" + lastMod.getDate()).slice(-2);
+			document.getElementById("jsonFile_date").innerHTML = date + ".";
+
+			// Parse store prices
 			storePrices = JSON.parse(this.responseText);
 		}
 	}
@@ -75,6 +84,7 @@ steamCardReq.onreadystatechange = function() {
 
 		var i = 0;
 
+		// Used to modify DOM in chunks
 		var insertHTMLLoop = function (loop) {
 			var loopEnd = i + loop;
 			while (i < loopEnd && i < arr.length) {
@@ -83,6 +93,7 @@ steamCardReq.onreadystatechange = function() {
 			}
 		};
 
+		// Control DOM edit intervals
 		var j = 0;
 		var interval = 115;
 		while (j < arr.length / 100) {
@@ -92,6 +103,7 @@ steamCardReq.onreadystatechange = function() {
 			j++;
 		}
 
+		// Progress bar
 		var id;
 		var hr = document.getElementById("progress");
 		var val = document.getElementById("progressVal");
