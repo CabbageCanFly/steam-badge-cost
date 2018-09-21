@@ -74,6 +74,7 @@ div.progress hr {
 }
 hr {
 	border-style: solid;
+	border-width: 4px;
 }
 hr.h1 {
 	border-color: rgba(255,255,255,0.6);
