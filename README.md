@@ -3,6 +3,8 @@ This webpage displays all games with badges in the Steam store. Each badge consi
 
 Credits to [Steam Card Exchange](http://steamcardexchange.net/index.php) for badge prices and [Tristen Brown](https://github.com/tristen/tablesort) for tablesort.
 
+Here's the webpage: <https://cabbagecanfly.github.io/steam-badge-cost/>
+
 ## Built With
 HTML + CSS + vanilla JS
 
