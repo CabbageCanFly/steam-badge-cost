@@ -11,7 +11,7 @@ document.getElementById("lastModified").innerHTML = date;
 
 // Store Steam prices from JSON into memory
 var storePrices;
-var file = "https://cabbagecanfly.github.io/steam-badge-cost/resources/data.json";
+var file = "https://cabbagecanfly.com/steam-badge-cost/resources/data.json";
 
 // Read in JSON data
 jsonFile = new XMLHttpRequest();
