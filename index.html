@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Badge</title>
+	<title>Steam Badge Cost Ratios</title>
 	<meta charset="UTF-8" name="theme-color" content="#272822">
 	<meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/ico" href="resources/images/favicon.png" />
 	<link rel="stylesheet" href="css/main.css">
+
+	<script src='js/tablesort.js'></script>
+	<script src='js/sorts/tablesort.number.js'></script>
 </head>
 <body>
 <article>
-	<h1 id="title">Title</h1>
+	<h1 id="title">Steam Badge Cost Ratios</h1>
+	<a class="text" id="github_link" target="_blank" href="#">on Github!</a>
+	<span id="progress2"></span>
+	<div class="progress">
+		<hr class="h1" id="progress">
+		<hr class="h1-bg">
+	</div>
+	<p>
+		This webpage displays all games with badges in the <a class="text" target="_blank" href="https://store.steampowered.com/">Steam store</a>. Each badge consists of trading cards with varying values in the <a class="text" target="_blank" href="https://steamcommunity.com/market">Steam marketplace</a>. This webpage compares how much a badge is worth compared to the games' price in the Steam store.
+	</p>
 	<table id="table_main">
 		<thead>
 			<tr>
-				<th onclick="sortTable('table_main', 0)">Product</th>
-				<th onclick="sortTable('table_main', 1)">Badge Price</th>
-				<th onclick="sortTable('table_main', 2)">Store Price</th>
+				<th>Product</th>
+				<th data-sort-method='number'>Badge Price</th>
+				<th data-sort-method='number'>Store Price</th>
+				<th data-sort-method='number'>Cost Ratio</th>
 			</tr>
 		</thead>
 		<tbody id="table_content">
-			
 		</tbody>
 	</table>
 </article>
 
 <footer>
-	<div id="lastModified"></div>
+	<div id="footer_container">
+		<span id="credits">Credits to <a class="text" target="_blank" href="https://www.steamcardexchange.net/">Steam Card Exchange</a> for badge prices.</span>
+		<span id="lastModified"></span>
+	</div>
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+	new Tablesort(document.getElementById('table_main'));
+</script>
 </body>
 </html>
