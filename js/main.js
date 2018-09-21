@@ -107,11 +107,12 @@ steamCardReq.onreadystatechange = function() {
 		var id;
 		var hr = document.getElementById("progress");
 		var val = document.getElementById("progressVal");
+		var valContainer = document.getElementById("progressVal_container");
 		var hrProgress = function() {
 			hr.style.width = (i / arr.length * 100) + '%';
 			val.innerHTML = Math.round(i / arr.length * 100) + '%';
 			if (i >= arr.length) {
-				val.classList.add("fadeAway");
+				valContainer.classList.add("fadeAway");
 				clearInterval(id);
 			}
 		};

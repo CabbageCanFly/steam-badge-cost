@@ -17,8 +17,16 @@ Main
 	font-style: 'Encode Sans Condensed';
 }
 
-html {
-
+* {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+}
+::selection {
+    background-color: #F92672;
+    color: White;
+}
+::-moz-selection {
+    background-color: #F92672;
+    color: White;
 }
 
 body {
@@ -45,25 +53,85 @@ h1#title {
 	margin-right: 4em;
 }
 
-#progressVal {
+#progressVal_container {
 	position: absolute;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	cursor: default;
 	right: 0;
 	bottom: 0;
 }
-#progressVal.fadeAway {
-	animation: fadeAway 1s forwards;
+#progressVal_container.fadeAway {
+	animation: fadeAway 4s forwards;
 }
+#progressVal_container.fadeAway #progressIco:after {
+	opacity: 1;
+	transform: translateY(-0.45em);
+}
+#progressVal_container.fadeAway #progressIco div { 
+	border-color: white;
+}
+
 @keyframes fadeAway {
 	0% {
 		opacity: 1;
 	}
-	99% {
+	25% {
 		opacity: 0;
 	}
 	100% {
 		opacity: 0;
-		display: none;
+		top: -100%;
 	}
+}
+
+#progressIco {
+	display: inline-block;
+	position: relative;
+	width: 0.75em;
+	height: 0.75em;
+}
+#progressIco:after {
+	position: absolute;
+	content: '!';
+	font-size: 85%;
+	width: 100%;
+	text-align: center;
+	left: 0.8em;
+	top: -0.1em;
+	opacity: 0;
+	transform: translateY(0);
+	transition: transform 0.8s;
+}
+#progressIco div {
+	box-sizing: border-box;
+	display: block;
+	position: absolute;
+	width: 0.75em;
+	height: 0.75em;
+	border: 2px solid;
+	border-radius: 50%;
+	border-color: white transparent transparent transparent;
+	animation: loadIco 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+#progressIco div:nth-child(1) {
+	animation-delay: -0.45s;
+}
+#progressIco div:nth-child(2) {
+	animation-delay: -0.3s;
+}
+#progressIco div:nth-child(3) {
+	animation-delay: -0.15s;
+}
+@keyframes loadIco {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 div.progress {
@@ -127,17 +195,6 @@ a.text:before {
 	-webkit-transform-origin: bottom;
 	    -ms-transform-origin: bottom;
 	        transform-origin: bottom;
-}
-a.text:after {
-	position: absolute;
-	content: '';
-	background-color: #272822;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	width: 0;
-	z-index: -1;
 }
 a.text:hover {
 	color: #272822;
@@ -228,16 +285,23 @@ footer {
 	bottom: 0;
 	left: 0;
 }
-footer a.text {
-	color: rgba(255,255,255,0.4);
-}
 #footer_container {
-	padding: 8px 8px 8px 8px;
+	position: relative;
+	
+}
+#footer_container div {
+	padding: 10px 8px 10px 8px;
+}
+.returnTop:before {
+	background-color: rgba(255,255,255,0.4) !important;
 }
 #lastModified {
 	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 0;
 	background-color: #272822;
-	width: 100%;
+	width: 50%;
 	text-align: right;
 	font-size: 1rem;
 }
